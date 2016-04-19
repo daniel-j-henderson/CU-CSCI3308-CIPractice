@@ -181,7 +181,7 @@ Suite* coord_2d_suite(void)
     TCase* tc_2d_dist = tcase_create("coord_2d_dist");
     tcase_add_test(tc_2d_dist, test_2d_dist);
 
-	TCase* tc_2d_dist = tcase_create("coord_2d_area_triangle");
+	TCase* tc_2d_area = tcase_create("coord_2d_area_triangle");
     tcase_add_test(tc_2d_area, test_2d_area);
 
     TCase* tc_2d_midpoint = tcase_create("coord_2d_midpoint");
