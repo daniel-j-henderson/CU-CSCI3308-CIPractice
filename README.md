@@ -11,3 +11,6 @@ Summer 2014
 
 ### Requirements
 sudo apt-get install check
+
+####Edits
+Edited the makefile to find check
