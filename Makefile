@@ -7,9 +7,13 @@ CFLAGS = -c -g -Wall -Wextra
 LFLAGS = -g -Wall -Wextra
 
 PKG_MATH_LIBS = -lm
-PKG_CHECK_LIBS = `pkg-config --libs check`
+PKG_CHECK_LIBS = `pkg-config --libs check` -I/usr/local/Cellar/check/0.10.0/include
 
 .PHONY: all dep clean
+
+.PHONY: test dep geometry
+
+test: geometry_test
 
 all: geometry_test
 
@@ -17,7 +21,7 @@ geometry_test: geometry_test.o geometry.o
 	$(CC) $(LFLAGS) $^ $(PKG_CHECK_LIBS) $(PKG_MATH_LIBS) -o $@
 
 geometry_test.o: geometry_test.c geometry.h
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) -I/usr/local/Cellar/check/0.10.0/include $< -o $@
 
 geometry.o: geometry.c geometry.h
 	$(CC) $(CFLAGS) $< -o $@
